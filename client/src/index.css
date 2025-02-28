@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: rgb(28, 27, 27);
+  --color-hover: rgb(65, 201, 148);
+  --color-footer: rgba(248, 249, 250, 0.7);
+}
+
 body {
   margin: 0;
   font-family:

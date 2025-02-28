@@ -1,5 +1,7 @@
+import { MainProvider } from "./app/providers"
+
 const App = () => {
-  return <div className="text-3xl">hi</div>
+  return <MainProvider />
 }
 
 export default App

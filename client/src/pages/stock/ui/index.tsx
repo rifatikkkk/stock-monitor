@@ -1,13 +1,14 @@
 import { Layout } from "../../../shared/ui/layout"
-import { Header } from "../../../widgets/ui/header"
 import { Footer } from "../../../widgets/ui/footer"
+import { Header } from "../../../widgets/ui/header"
+import { Monitor } from "../../../widgets/ui/monitor"
 
-export const Main = () => {
+export const Stock = () => {
   return (
     <>
       <Layout>
         <Header />
-        <main className="grow-1">main</main>
+        <Monitor />
         <Footer />
       </Layout>
     </>

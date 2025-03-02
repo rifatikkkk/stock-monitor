@@ -1,4 +1,4 @@
-import { MainProvider } from "./app/providers"
+import { MainProvider } from "./providers"
 
 const App = () => {
   return <MainProvider />

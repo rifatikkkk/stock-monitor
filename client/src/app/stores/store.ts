@@ -1,8 +1,18 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
-import { configureStore } from "@reduxjs/toolkit"
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import { api } from "../../entities/api/api"
+import stock from "../../entities/slices/stockSlice"
+
+const rootReducer = combineReducers({
+  [api.reducerPath]: api.reducer,
+  stock,
+})
 
 export const store = configureStore({
-  reducer: {},
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware => {
+    return getDefaultMiddleware().concat(api.middleware)
+  },
 })
 
 export type AppStore = typeof store

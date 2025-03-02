@@ -21,8 +21,12 @@ export const Select: React.FC<Props> = ({
       name={name}
       onChange={onChange}
     >
-      {options?.map(option => {
-        return <option value={option.value}>{option.name}</option>
+      {options?.map((option, index) => {
+        return (
+          <option key={index} value={option.value}>
+            {option.name}
+          </option>
+        )
       })}
     </select>
   )

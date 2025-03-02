@@ -1,4 +1,4 @@
-import { useGetInfoStockQuery } from "../../../../entities"
+import { type Info, useGetInfoStockQuery } from "../../../../entities"
 import { type ChangeEvent, useEffect, useState } from "react"
 import { type OptionType } from "../../../../shared/types"
 import { Select } from "../../../../shared/ui/select"
@@ -24,7 +24,7 @@ const options: OptionType[] = [
 
 export const Table: React.FC<Props> = ({ search }) => {
   const { data } = useGetInfoStockQuery(search)
-  const [tableData, setTableData] = useState(data)
+  const [tableData, setTableData] = useState<Info[] | undefined>()
   const [selectedFilter, setSelectedFilter] = useState<number>(0)
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const Table: React.FC<Props> = ({ search }) => {
           <th className="p-4">
             <h4 className="text-white text-xl font-normal">Change Price</h4>
           </th>
-          <th className="pt-4">
+          <th className="p-4">
             <Select
               onChange={handleSelectChange}
               defaultValues={0}

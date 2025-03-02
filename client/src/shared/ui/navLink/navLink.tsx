@@ -7,9 +7,13 @@ type Props = {
 export const NavLink: React.FC<Props> = ({ links }) => {
   return (
     <nav className="flex flex-row gap-3">
-      {links?.map(link => {
+      {links?.map((link, index) => {
         return (
-          <a className="text-white hover:text-custom-green" href={link.href}>
+          <a
+            key={index}
+            className="text-white hover:text-custom-green"
+            href={link.href}
+          >
             {link.name}
           </a>
         )

@@ -10,7 +10,7 @@ npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
 
 1. Clone 'client' project
 2. Run command `npm install`/`yarn install` to install dependencies
-3. Create a file `.env` and add value `VITE_FINNHUB_TOKEN`. Example: `VITE_API_URL=oey7Hoae95N3fQlfegMjdBzH8Ev6UfGcIo4rCyqW` (not working key)
+3. Create a file `.env` and add value `VITE_FINNHUB_TOKEN`. Example: `VITE_FINNHUB_TOKEN=oey7Hoae95N3fQlfegMjdBzH8Ev6UfGcIo4rCyqW` (not working key)
 4. Run the application using the command `npm run dev`/`yarn run dev`
 
 ## Goals

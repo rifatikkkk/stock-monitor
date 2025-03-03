@@ -5,6 +5,7 @@ import { Select } from "../../../../shared/ui/select"
 
 type Props = {
   search: string
+  onOpenGraphic: React.MouseEventHandler<HTMLElement>
 }
 
 const options: OptionType[] = [
@@ -22,7 +23,7 @@ const options: OptionType[] = [
   },
 ]
 
-export const Table: React.FC<Props> = ({ search }) => {
+export const Table: React.FC<Props> = ({ search, onOpenGraphic }) => {
   const { data } = useGetInfoStockQuery(search)
   const [tableData, setTableData] = useState<Info[] | undefined>()
   const [selectedFilter, setSelectedFilter] = useState<number>(0)
@@ -36,7 +37,7 @@ export const Table: React.FC<Props> = ({ search }) => {
   }
 
   return (
-    <table className="text-left table-auto min-w-full text-white rounded-3xl p-4 bg-background-form ">
+    <table className="text-left table-auto min-w-full text-white rounded-3xl p-4 bg-background-form">
       <thead className="text-center">
         <tr className="text-center">
           <th className="p-4">
@@ -73,7 +74,8 @@ export const Table: React.FC<Props> = ({ search }) => {
             return (
               <tr
                 key={index}
-                className="border-b-1 text-center border-white cursor-pointer"
+                onClick={stock.c && stock.o ? onOpenGraphic : undefined}
+                className={`border-b-1 text-center border-white ${stock.c && stock.o ? "cursor-pointer" : null}`}
               >
                 <td className="py-4 pr-4 ">
                   <p>{stock.displaySymbol}</p>

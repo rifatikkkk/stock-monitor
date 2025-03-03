@@ -24,7 +24,9 @@ export const Search: React.FC<Props> = ({ onSubmit, control }) => {
         />
       </div>
 
-      <Button type="submit">Search</Button>
+      <Button type="submit" className="p-4">
+        Search
+      </Button>
     </form>
   )
 }

@@ -18,7 +18,7 @@ const initialState: InitialState = {
 const slice = createSlice({
   name: "stock",
   initialState,
-  reducers: create => ({
+  reducers: () => ({
     initial: () => initialState,
   }),
   extraReducers: builder => {

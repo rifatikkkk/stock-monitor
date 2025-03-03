@@ -41,7 +41,7 @@ export const stockApi = api.injectEndpoints({
 
           infoStock = await Promise.all(
             // for add not empty outputResult
-            searchResult.result.map(async (search, index) => {
+            searchResult.result.map(async search => {
               const quotes = await baseQuery(
                 `/quote?symbol=${search.symbol}&token=${VITE_FINNHUB_TOKEN}`,
               )
